@@ -375,7 +375,6 @@ func TestScheduler_StopLongRunningJobs(t *testing.T) {
 				func(ctx context.Context) {
 					select {
 					case <-ctx.Done():
-						time.Sleep(time.Second)
 					case <-time.After(100 * time.Millisecond):
 						t.Fatal("job can not been canceled")
 					}
