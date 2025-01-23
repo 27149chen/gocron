@@ -706,7 +706,7 @@ func WithIdentifier(id uuid.UUID) JobOption {
 
 // WithContext sets the parent context for the job
 func WithContext(ctx context.Context) JobOption {
-	return func(j *internalJob, now time.Time) error {
+	return func(j *internalJob, _ time.Time) error {
 		j.parentCtx = ctx
 		return nil
 	}
